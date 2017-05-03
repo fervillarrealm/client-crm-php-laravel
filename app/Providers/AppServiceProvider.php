@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace CsCloud\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

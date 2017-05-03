@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace CsCloud\Events;
 
 abstract class Event
 {

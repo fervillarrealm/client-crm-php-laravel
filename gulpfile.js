@@ -27,17 +27,20 @@ gulp.task('less', function() {
     .pipe(less())
     .pipe(gulp.dest(paths.production.css))
     .pipe(minify({keepSpecialComments:0}))
-    //.pipe(rename({suffix: '.min'}))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(paths.production.css));
 });
 
 //  CSS
 gulp.task('css', function (){
   return gulp.src([
+    paths.dev.vendor + 'bootstrap/dist/css/bootstrap.css',
+    paths.dev.vendor + 'bootstrap/dist/css/bootstrap-theme.css',
     paths.dev.vendor + 'datatables/media/css/jquery.dataTables.css',
     paths.dev.vendor + 'datatables/media/css/dataTables.bootstrap.css',
     paths.dev.vendor + 'font-awesome/css/font-awesome.css',
     paths.dev.vendor + 'sweetalert2/dist/sweetalert2.css',
+    paths.dev.vendor + 'toastr/toastr.css',
     paths.dev.vendor + 'AdminLTE/dist/css/AdminLTE.css',
     paths.dev.vendor + 'AdminLTE/dist/css/skins/skin-blue.css',
     ])
@@ -45,6 +48,16 @@ gulp.task('css', function (){
     .pipe(minify({keppSpecialComments:0}))
     //.pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(paths.production.css));
+});
+
+//  VALIDATE CSS
+gulp.task('validate-css', function (){
+  return gulp.src([
+    paths.dev.vendor + 'js-validation/scss/validation.css'
+  ])
+  .pipe(concat('jsvalidation.css'))
+  .pipe(minify({keepSpecialComments:0}))
+  .pipe(gulp.dest(paths.production.css));
 });
 
 //  JS
@@ -55,6 +68,7 @@ gulp.task('js', function(){
       paths.dev.vendor+'datatables/media/js/jquery.dataTables.js',
       paths.dev.vendor+'datatables/media/js/dataTables.bootstrap.js',
       paths.dev.vendor+'sweetalert2/dist/sweetalert2.js',
+      paths.dev.vendor+'toastr/toastr.js',
       paths.dev.vendor+'AdminLTE/dist/js/app.js',
       paths.dev.js+'js'
     ])
@@ -62,6 +76,7 @@ gulp.task('js', function(){
     .pipe(uglify())
     .pipe(gulp.dest(paths.production.js));
 });
+
 
 //  PHP Unit
 gulp.task('phpunit', function() {  
@@ -88,4 +103,5 @@ gulp.task('watch', function() {
   gulp.watch('./tests/*.php', ['phpunit']);
 });
 
-gulp.task('default', ['less', 'css', 'js', 'phpunit', 'watch']);  
+gulp.task('default', ['less', 'css', 'js', 'validate-css', 'watch']);  
+//'phpunit', 

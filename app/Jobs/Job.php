@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace CsCloud\Jobs;
 
 use Illuminate\Bus\Queueable;
 

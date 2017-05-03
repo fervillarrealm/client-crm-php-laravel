@@ -1,0 +1,14 @@
+{
+  "name": "js-validation",
+  "homepage": "https://github.com/binaryk/js-validation",
+  "_release": "c18ce6ecd1",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c18ce6ecd1475b070fd759622f32270b3deb0864"
+  },
+  "_source": "https://github.com/binaryk/js-validation.git",
+  "_target": "*",
+  "_originalSource": "js-validation",
+  "_direct": true
+}
