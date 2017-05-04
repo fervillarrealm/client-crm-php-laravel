@@ -145,7 +145,7 @@ gulp.task('serve', ['less', 'css', 'js', 'fonts', 'images', 'validate-css', 'bro
 });
 
 gulp.task('watch', function (){
-  gulp.watch(paths.dev.css + '/*.css', ['css', 'browserSync']);
+  gulp.watch(paths.dev.css + '/*.css', ['css', 'browserSync']).on('change', browserSync.reload);
   gulp.watch(paths.dev.js + '/*.js', ['js']).on('change', browserSync.reload);
   gulp.watch(paths.dev.img + '/*', ['img']);
   gulp.watch('*.php', ['reload']);

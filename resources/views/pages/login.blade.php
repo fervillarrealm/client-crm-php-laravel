@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="checkbox">
-                         <label><input type="checkbox" value="">Recordarme</label>
+                         <label><input type="checkbox" id="remember" name="remember" value="">Recordarme</label>
                     </div>
                 </div>
                 <div class="col-md-6 text-right">

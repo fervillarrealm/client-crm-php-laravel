@@ -2,12 +2,13 @@
 
 namespace CsCloud\Http\Controllers;
 
-use App\Users;
+use CsCloud\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use CsCloud\Http\Requests;
 use JsValidator;
 use Toastr;
+use Input;
 
 class LoginController extends Controller
 {
@@ -28,18 +29,24 @@ class LoginController extends Controller
      
     public function postLogin(Request $request){
         
+        $remember = (Input::has('remember')) ? true : false;
+        
         $this->validate($request, [
 			'loginUserName' 	=>  'required|alpha',
 			'password'	        =>	'required'
 		]);
 		
-		 $credentials = [
-            'name' 			=> $request['loginUserName'],
-            'password'   	=> $request['password']
-        ];
-        
-        if (!Auth::attempt($credentials)) {
-            Toastr::error($message = 'Credenciales incorrectas', $title = 'Error', $options = []);
+		$user = Users::where('name', strtolower(Input::get('loginUserName')))->first();
+        if(!$user) {
+            Toastr::error($message = 'Usuario inválido', $title = 'Error al Iniciar Sesión', $options = []);
+            return redirect()->back();
+        }
+		
+        if (!Auth::attempt([
+                'name'      => strtolower(Input::get('loginUserName')),
+                'password'  => Input::get('password')
+            ], $remember)) {
+            Toastr::error($message = 'Combinación errónea de nombre de usuario y contraseña', $title = 'Error al Iniciar Sesión', $options = []);
             return redirect()->back();
         }
         

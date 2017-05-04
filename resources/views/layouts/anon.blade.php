@@ -36,6 +36,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- jQuery 2.1.3 -->
 <script src="{{ asset ("assets/js/main.js") }}" type="text/javascript"></script>
 <script src="{{ asset ("assets/js/CsCloud.js") }}" type="text/javascript"></script>
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:8081/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));//]]>
+</script>
 @stack('scripts')
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the

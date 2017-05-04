@@ -1,3 +1,4 @@
-body {
-    background-color: blue;
+
+.input-group-addon{
+    width: 40px !important;
 }
