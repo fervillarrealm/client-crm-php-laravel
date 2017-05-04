@@ -7,4 +7,4 @@ Web application, includes:
 * Reports
 * Inventory
 
-Made with [Laravel](http://laravel.com) & [AdminLte Template](https://almsaeedstudio.com).
+Made with [Laravel](http://laravel.com) & [AdminLTE Template](https://almsaeedstudio.com).

@@ -39,9 +39,22 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Tests</div>
             </div>
         </div>
         <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
+        <script id="__bs_script__">//<![CDATA[
+            document.write("<script async src='http://HOST:8081/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));//]]>
+        </script>
+        
+        <script type="text/javascript">
+            $(function (){
+               swal(
+                  'Good job!',
+                  'You clicked the button!',
+                  'success'
+                );
+            });
+        </script>
     </body>
 </html>

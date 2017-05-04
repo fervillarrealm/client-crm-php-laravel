@@ -1,6 +1,7 @@
 
 var CsCloud = function () {
 
+var data = 2;
     function initialize(){
         
     }
