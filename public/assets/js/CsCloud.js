@@ -1,9 +1,13 @@
+$(function(){
+    alert("data1");
+});
+
 
 var CsCloud = function () {
 
-var data = 2;
+
     function initialize(){
-        
+        alert("Data 1");
     }
 
     return {

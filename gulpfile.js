@@ -145,7 +145,7 @@ gulp.task('serve', ['less', 'css', 'js', 'fonts', 'images', 'validate-css', 'bro
 });
 
 gulp.task('watch', function (){
-  gulp.watch(paths.dev.css + '/*.css', ['css', 'reload']);
+  gulp.watch(paths.dev.css + '/*.css', ['css', 'browserSync']);
   gulp.watch(paths.dev.js + '/*.js', ['js']).on('change', browserSync.reload);
   gulp.watch(paths.dev.img + '/*', ['img']);
   gulp.watch('*.php', ['reload']);
@@ -184,6 +184,8 @@ gulp.task('browserSync', function() {
             ignored : 'node_modules/*',
             ignoreInitial : true
         }
+    }, function() {
+      notify('Browser Reloaded');
     });
 });
 
