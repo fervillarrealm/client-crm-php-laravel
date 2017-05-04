@@ -9,20 +9,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>CsCloud - {{ $page_title or "" }}</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
-    <link href="{{ asset("/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" type="text/css" />
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="{{ asset("/bower_components/AdminLTE/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
-    -->
-    <link href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("/css/skin-fusioninvoice.min.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("/css/site.css")}}" rel="stylesheet" type="text/css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="skin-blue sidebar-mini" style="height: auto;" cz-shortcut-listen="true">
 <div class="wrapper">
     <div id="loader" class="loader" style="display: none">
-        <img src="{{ asset('/img/preloader01.gif') }}" alt="Cargando..." />
+        <img src="{{ asset('assets/img/preloader01.gif') }}" alt="Cargando..." />
     </div>
     <!-- Header -->
     @include('includes.header')
@@ -70,14 +60,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED JS SCRIPTS -->
 
-<!-- jQuery 2.1.3 -->
-<script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js") }}"></script>
-<!-- Bootstrap 3.3.2 JS -->
-<script src="{{ asset ("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset ("/bower_components/AdminLTE/dist/js/app.min.js") }}" type="text/javascript"></script>
+<script src="{{ asset ("assets/js/main.js") }}" type="text/javascript"></script>
 <!-- Site JS -->
-<script src="{{ asset ("/js/CsCloud.js") }}" type="text/javascript"></script>
+<script src="{{ asset ("assets/js/CsCloud.js") }}" type="text/javascript"></script>
 @stack('scripts')
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the

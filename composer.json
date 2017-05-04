@@ -10,7 +10,8 @@
         "proengsoft/laravel-jsvalidation": "~1.1",
         "narutimateum/toastr-5.2-laravel": "dev-master",
         "laravelcollective/html": "~5.0",
-        "barryvdh/laravel-debugbar": "^2.3"
+        "barryvdh/laravel-debugbar": "^2.3",
+        "busayo/laravel-yearly": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

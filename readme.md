@@ -8,3 +8,8 @@ Web application, includes:
 * Inventory
 
 Made with [Laravel](http://laravel.com) & [AdminLTE Template](https://almsaeedstudio.com).
+
+
+## Build
+
+Automation with Gulp + BrowserSync.

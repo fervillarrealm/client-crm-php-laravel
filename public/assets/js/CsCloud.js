@@ -1,13 +1,7 @@
-$(function(){
-    alert("data3");
-});
-
-
 var CsCloud = function () {
 
-
     function initialize(){
-        alert("Data 1");
+        
     }
 
     return {

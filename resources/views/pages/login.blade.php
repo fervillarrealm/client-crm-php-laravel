@@ -1,8 +1,16 @@
 @extends('layouts.anon')
 
 @section('content')
+<div>
+    
+    
+    
+</div>
+
 <section class="login-box-body">
-    <form action="" method="post" data-bind="submit: validateAndSubmit">
+    {{ Form::open(array('action' => 'LoginController@postLogin')) }}
+        {{ Form::token() }}
+    <!--<form action="{{ route('postLogin') }}" method="post" data-bind="submit: validateAndSubmit">-->
         <div class="form-group">
             <div class="input-group">
                 <input type="text" id="loginUserName" name="loginUserName" placeholder="Usuario" class="form-control" data-bind="value: loginForm.loginUserName" />
@@ -24,11 +32,11 @@
                 </div>
                 <div class="col-md-6 text-right">
                     <button type="submit" class="btn btn-primary" data-bind="enable: !sending()">Iniciar Sesión</button>
-                    <input type="hidden" name="_token" value="{{ Session::token() }}" />
                 </div>
             </div><!-- .row -->
         </div><!-- .form-group -->
-    </form><!-- form -->
+    {{ Form::close() }}
+    <!--</form><!-- form -->
 </section><!-- .login-box-body -->
 
  @if(count($errors) > 0)
@@ -39,12 +47,18 @@
   </div>
 @endif
 
+@if(Session::has('fail'))
+  <div id="alertSpam" class="alert alert-danger alert-dismissible" role="alert">
+      <strong>Error! </strong><span>{{ Session::get('fail') }}</span>
+  </div>
+@endif
+
 @endsection
 
 @push('scripts')
     <!-- Laravel Javascript Validation -->
      <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
-     {!! $validator !!}
+     
      {!! Toastr::render() !!}
      
     <script type="text/javascript">

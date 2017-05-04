@@ -2,8 +2,8 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-        Anything you want
+        {{ Auth::user()->name }}
     </div>
     <!-- Default to the left -->
-    <strong>Copyright © 2015 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong> &copy; Copyright {{ current_year() }} <a href="#">CsCloud</a>.</strong> Todos los derechos reservados.
 </footer>
