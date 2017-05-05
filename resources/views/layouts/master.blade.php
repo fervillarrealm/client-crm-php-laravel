@@ -6,13 +6,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>CsCloud - {{ $page_title or "" }}</title>
+    <title>{{ $page_title or "" }} - CsCloud</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon"/>
     <!-- Bootstrap 3.3.2 -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" type="text/css" />
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("/css/skin-fusioninvoice.min.css")}}" rel="stylesheet" type="text/css" />
+    <!--<link href="{{ asset("/css/skin-fusioninvoice.min.css")}}" rel="stylesheet" type="text/css" />-->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,16 +35,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
+        <section class="content-header" style="height:49px;">
+            <h1 class="pull-left">
                 {{ $page_title or "Page Title" }}
                 <small>{{ $page_description or null }}</small>
             </h1>
             <!-- You can dynamically generate breadcrumbs here -->
-            <ol class="breadcrumb">
+            <div class="pull-right">
+               @include('includes.actions')
+            </div>
+            <!--<ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
                 <li class="active">Here</li>
-            </ol>
+            </ol>-->
         </section>
 
         <!-- Main content -->

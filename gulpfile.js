@@ -148,7 +148,7 @@ gulp.task('watch', function (){
   gulp.watch(paths.dev.css + '/*.css', ['css', 'browserSync']).on('change', browserSync.reload);
   gulp.watch(paths.dev.js + '/*.js', ['js']).on('change', browserSync.reload);
   gulp.watch(paths.dev.img + '/*', ['img']);
-  gulp.watch('*.php', ['reload']);
+  //gulp.watch('*.php', ['reload']);
 });
 
 

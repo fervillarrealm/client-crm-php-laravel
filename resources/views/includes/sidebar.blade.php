@@ -38,7 +38,7 @@
             <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-        <li><a href="../../documentation/index.html"><i class="fa fa-user"></i> <span>Clientes</span></a></li>
+        <li><a href="{{ route('clientes') }}"><i class="fa fa-user"></i> <span>Clientes</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>

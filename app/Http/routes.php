@@ -30,5 +30,19 @@ Route::group(['middlewareGroups' => 'web'], function () {
            'as'     => 'home'
         ]);
         
+        
+        /*  CLIENTES
+        ===============================================================*/
+        Route::group(['prefix' => 'clientes'], function () {
+            
+            Route::get('/', [
+                'uses'  => 'ClientController@index',
+                'as'    => 'clientes'
+            ]);
+            
+        });
+        
+        
+        
     });
 });

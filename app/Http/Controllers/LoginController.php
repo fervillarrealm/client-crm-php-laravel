@@ -21,8 +21,11 @@ class LoginController extends Controller
         
         $validator = JsValidator::make($this->validationRules);
         
+        $page_title = 'Iniciar Sesión';
+        
         return view('pages.login')->with([
-            'validator' => $validator
+            'validator'     => $validator,
+            'page_title'    => $page_title
         ]);
     }
     
@@ -56,7 +59,7 @@ class LoginController extends Controller
     public function GetLogout(){
         
         Auth::logout();
-		return view('pages.login');
+		return redirect()->route('login');
     }
     
 }

@@ -14,13 +14,13 @@
         <div class="form-group">
             <div class="input-group">
                 <input type="text" id="loginUserName" name="loginUserName" placeholder="Usuario" class="form-control" data-bind="value: loginForm.loginUserName" />
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
             </div>
         </div><!-- .form-group -->
         <div class="form-group">
             <div class="input-group">
                 <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control" data-bind="value: loginForm.password" />
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
             </div>
         </div><!-- .form-group -->
         <div class="form-group">

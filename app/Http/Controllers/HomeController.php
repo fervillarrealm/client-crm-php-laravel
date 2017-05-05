@@ -44,6 +44,12 @@ class HomeController extends Controller
         $page_title = "Inicio";
         $myarray = array_collapse($data);
         
+        debug($myarray,$page_title);
+        Debugbar::info($myarray);
+        Debugbar::info("Pasando Proceso 1...");
+        Debugbar::error('Error!');
+        Debugbar::warning('Watch out…');
+        
         return view('pages.home', [
                 'tasks' => $myarray,
                 'page_title' => $page_title
