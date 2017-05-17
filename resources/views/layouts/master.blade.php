@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    @stack('styles')
 </head>
 <body class="skin-blue sidebar-mini" style="height: auto;" cz-shortcut-listen="true">
 <div class="wrapper">
@@ -34,26 +35,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header" style="height:49px;">
-            <h1 class="pull-left">
-                {{ $page_title or "Page Title" }}
-                <small>{{ $page_description or null }}</small>
-            </h1>
-            <!-- You can dynamically generate breadcrumbs here -->
-            <div class="pull-right">
-               @include('includes.actions')
-            </div>
-            <!--<ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
-            </ol>-->
-        </section>
-
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->
             @yield('content')
+             @if(count($errors) > 0)
+              <div id="alertSpam" class="alert alert-danger alert-dismissible" role="alert">
+                @foreach($errors->all() as $errors)
+                  <strong>Error! </strong><span>{{ $errors }}</span>
+                @endforeach
+              </div>
+            @endif
+            
+            @if(Session::has('fail'))
+              <div id="alertSpam" class="alert alert-danger alert-dismissible" role="alert">
+                  <strong>Error! </strong><span>{{ Session::get('fail') }}</span>
+              </div>
+            @endif
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
@@ -67,9 +65,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset ("assets/js/main.js") }}" type="text/javascript"></script>
 <!-- Site JS -->
 <script src="{{ asset ("assets/js/CsCloud.js") }}" type="text/javascript"></script>
-<script id="__bs_script__">//<![CDATA[
+<!--<script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:8081/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));//]]>
-</script>
+</script>-->
 @stack('scripts')
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the

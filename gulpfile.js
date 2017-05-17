@@ -72,6 +72,30 @@ gulp.task('validate-css', function (){
   .pipe(gulp.dest(paths.production.css));
 });
 
+
+//  DATEPICKER CSS
+gulp.task('css-datepicker', function (){
+  return gulp.src([
+    paths.dev.vendor + 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'
+  ])
+  .pipe(concat('bootstrap-datepicker.css'))
+  .pipe(minify({keepSpecialComments:0}))
+  .pipe(gulp.dest(paths.production.css));
+});
+
+
+//  DATATABLES CSS
+gulp.task('css-datatables', function (){
+  return gulp.src([
+    paths.dev.vendor + 'datatables/media/css/jquery.dataTables.min.css',
+    paths.dev.vendor + 'datatables/media/css/dataTables.bootstrap.min.css'
+  ])
+  .pipe(concat('jquery.datatables.css'))
+  .pipe(minify({keepSpecialComments:0}))
+  .pipe(gulp.dest(paths.production.css));
+});
+
+
 //  JS
 gulp.task('js', function(){  
   return gulp.src([
@@ -92,11 +116,52 @@ gulp.task('js', function(){
 });
 
 
+//  MASK
+gulp.task('mask', function(){  
+  return gulp.src([
+      paths.dev.vendor+'jquery-mask-plugin/dist/jquery.mask.min.js'
+    ])
+    .pipe(concat('jquery.mask.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.production.js))
+    .pipe(browserSync.stream())
+    .pipe(notify('Js Mask Complete!'));
+});
+
+//  JS-DATEPICKER
+gulp.task('js-datepicker', function(){  
+  return gulp.src([
+      paths.dev.vendor+'bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
+    ])
+    .pipe(concat('bootstrap-datepicker.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.production.js))
+    .pipe(browserSync.stream())
+    .pipe(notify('Js Datepicker Complete!'));
+});
+
+
+//  JS-DATATABLES
+gulp.task('js-datatables', function(){  
+  return gulp.src([
+      paths.dev.vendor+'datatables/media/js/jquery.dataTables.min.js',
+      paths.dev.vendor+'datatables/media/js/dataTables.bootstrap.min.js'
+    ])
+    .pipe(concat('jquery.datatables.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.production.js))
+    .pipe(browserSync.stream())
+    .pipe(notify('Js Datatables Complete!'));
+});
+
+
+
 //  IMAGES
 // Images
 gulp.task('images', function () {
     return gulp.src([
         paths.dev.vendor+'AdminLTE/dist/img/*',
+        paths.dev.vendor+'datatables/media/images/sort*',
     		'app/images/**/*',
     		'app/lib/images/*'])
         .pipe(cache(imagemin({
@@ -137,7 +202,8 @@ gulp.task('phpunit', function() {
 
 
 //  SERVE
-gulp.task('serve', ['less', 'css', 'js', 'fonts', 'images', 'validate-css', 'browserSync', 'watch'], function () {
+gulp.task('serve', ['less', 'css', 'js', 'mask', 'js-datepicker', 'css-datepicker', 
+      'css-datatables', 'js-datatables', 'fonts', 'images', 'validate-css', 'browserSync', 'watch'], function () {
   
   notify('Served!');
   

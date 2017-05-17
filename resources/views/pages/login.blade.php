@@ -9,7 +9,6 @@
 
 <section class="login-box-body">
     {{ Form::open(array('action' => 'LoginController@postLogin')) }}
-        {{ Form::token() }}
     <!--<form action="{{ route('postLogin') }}" method="post" data-bind="submit: validateAndSubmit">-->
         <div class="form-group">
             <div class="input-group">
@@ -60,6 +59,7 @@
      <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
      
      {!! Toastr::render() !!}
+     {!! $validator !!}
      
     <script type="text/javascript">
         $(function (){

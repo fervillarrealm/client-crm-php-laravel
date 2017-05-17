@@ -40,6 +40,21 @@ Route::group(['middlewareGroups' => 'web'], function () {
                 'as'    => 'clientes'
             ]);
             
+            Route::get('/crearcliente', [
+               'uses'   => 'ClientController@crear',
+               'as'     => 'crearcliente'
+            ]);
+            
+            Route::post('/crear', [
+                'uses'  => 'ClientController@insertCliente',
+                'as'    => 'insertCliente'
+            ]);
+            
+            Route::get('/listaClientes', [
+                'uses'  => 'ClientController@listaClientes',
+                'as'    => 'listaClientes'
+            ]);
+            
         });
         
         

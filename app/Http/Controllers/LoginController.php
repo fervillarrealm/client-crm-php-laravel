@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use CsCloud\Http\Requests;
 use JsValidator;
+use Debugbar;
 use Toastr;
 use Input;
 

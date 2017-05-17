@@ -151,6 +151,7 @@ return [
         narutimateum\Toastr\ToastrServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
         
         /*
          * Application Service Providers...
@@ -211,6 +212,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         
     ],
 

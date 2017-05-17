@@ -11,7 +11,8 @@
         "narutimateum/toastr-5.2-laravel": "dev-master",
         "laravelcollective/html": "~5.0",
         "barryvdh/laravel-debugbar": "^2.3",
-        "busayo/laravel-yearly": "^1.1"
+        "busayo/laravel-yearly": "^1.1",
+        "yajra/laravel-datatables-oracle": "^6.10"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
